@@ -11,11 +11,11 @@
 #import "QBImagePickerController.h"
 #import "VPImageCropperViewController.h"
 
-@protocol YYTakePhotoToolDelegate <NSObject>
+@protocol YYPhotoManagerDelegate <NSObject>
 /**
  *  照片选择完成
  */
-- (void)didFinishPickingAssets:(NSArray *)assets;
+- (void)didFinishPickingPhotos:(NSArray *)images;
 /**
  *  拍照完成
  */
@@ -47,6 +47,6 @@
  */
 @property (strong,nonatomic) UIViewController *target;
 
-@property (nonatomic,weak) id <YYTakePhotoToolDelegate> delegate;
+@property (nonatomic,weak) id <YYPhotoManagerDelegate> delegate;
 
 @end

@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import "YYPhotoManager.h"
+@interface ViewController () <YYPhotoManagerDelegate>
+@property (strong,nonatomic) YYPhotoManager *manager;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -16,12 +18,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
+
+
+- (IBAction)singleSelection:(id)sender {
+    [self.manager show];
+}
+
+- (IBAction)multiSelection:(id)sender {
+    self.manager.isAllowMultiSelect = YES;
+    self.manager.maxSelections = 6;
+    [self.manager show];
+}
+
+- (void)didFinishEditPhoto:(UIImage *)image{
+    self.imageView.image = image;
+}
+
+- (void)didFinishTakePhoto:(UIImage *)image{
+    self.imageView.image = image;
+}
+
+- (void)didFinishPickingPhotos:(NSArray *)images{
+    NSLog(@"%@",images);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - lazy
+- (YYPhotoManager *)manager{
+    if (!_manager) {
+        _manager = [YYPhotoManager defaultManager];
+        _manager.delegate = self;
+        _manager.target = self;
+    }
+    return _manager;
 }
 
 @end

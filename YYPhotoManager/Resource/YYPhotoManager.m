@@ -73,7 +73,7 @@ static id instance;
     }
     
     [self.target dismissViewControllerAnimated:YES completion:^{
-        [self.delegate didFinishPickingAssets:temp];
+        [self.delegate didFinishPickingPhotos:temp];
     }];
 }
 
