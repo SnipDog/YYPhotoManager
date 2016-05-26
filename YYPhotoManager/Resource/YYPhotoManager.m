@@ -22,12 +22,11 @@ static id instance;
 }
 
 - (void)show{
+    //TODO: 替换UIAlertController
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *ablum = [UIAlertAction actionWithTitle:@"打开相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [instance openAblum];
     }];
-    
-    
     
     UIAlertAction *camera = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [instance openCamera];
