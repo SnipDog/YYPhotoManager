@@ -4,12 +4,25 @@
 ![CocoaPods](https://img.shields.io/badge/pod-v1.0-779800.svg)
 
 ######Simple manager to take photo or select photo from album,and you can edit the photo
+##Feature
+- Custom ActionSheet
+- Multiple Selection
+- single Selection Edit
 
 ##Install
 ###Cocoapod
 	pod 'YYPhotoManager', '~> 1.0'
 ###Manual
 Drag `Resource`File to your project
+
+##Snapshot
+<img src="https://github.com/Heisenbean/YYPhotoManager/blob/master/Snapshot/Snapshot5.gif?raw=true" height="568" width="320" />
+
+
+<img src="https://github.com/Heisenbean/YYPhotoManager/blob/master/Snapshot/Snapshot1.png?raw=true" height="568" width="320" />
+<img src="https://github.com/Heisenbean/YYPhotoManager/blob/master/Snapshot/Snapshot2.png?raw=true" height="568" width="320" />
+<img src="https://github.com/Heisenbean/YYPhotoManager/blob/master/Snapshot/Snapshot4.png?raw=true" height="568" width="320" />
+<img src="https://github.com/Heisenbean/YYPhotoManager/blob/master/Snapshot/Snapshot3.png?raw=true" height="568" width="320" />
 
 ##Use
 You can see [`ViewController.m`](https://github.com/Heisenbean/YYPhotoManager/blob/master/YYPhotoManager/ViewController.m)and you will know how use it!
