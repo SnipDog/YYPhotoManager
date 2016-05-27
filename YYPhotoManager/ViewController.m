@@ -22,10 +22,13 @@
 
 
 - (IBAction)singleSelection:(id)sender {
+    self.manager.isCustom = NO;
+    self.manager.isAllowMultiSelect = NO;
     [self.manager show];
 }
 
 - (IBAction)multiSelection:(id)sender {
+    self.manager.isCustom = NO;
     self.manager.isAllowMultiSelect = YES;
     self.manager.maxSelections = 6;
     [self.manager show];
