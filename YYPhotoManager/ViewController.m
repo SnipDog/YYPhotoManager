@@ -50,12 +50,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 #pragma mark - lazy
 - (YYPhotoManager *)manager{
     if (!_manager) {
