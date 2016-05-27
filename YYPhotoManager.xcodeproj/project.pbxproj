@@ -27,6 +27,8 @@
 		35ABE8E81CF778FB00F3AB7D /* QBVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABE8D81CF778FB00F3AB7D /* QBVideoIndicatorView.m */; };
 		35ABE8E91CF778FB00F3AB7D /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABE8DC1CF778FB00F3AB7D /* VPImageCropperViewController.m */; };
 		35ABE8ED1CF77D1600F3AB7D /* YYPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABE8EC1CF77D1600F3AB7D /* YYPhotoManager.m */; };
+		35ABE8EF1CF7E5B400F3AB7D /* YYPhotoSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35ABE8EE1CF7E5B400F3AB7D /* YYPhotoSheet.xib */; };
+		35ABE8F21CF7E75F00F3AB7D /* YYPhotoSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ABE8F11CF7E75F00F3AB7D /* YYPhotoSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,9 @@
 		35ABE8DC1CF778FB00F3AB7D /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		35ABE8EB1CF77D1600F3AB7D /* YYPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoManager.h; sourceTree = "<group>"; };
 		35ABE8EC1CF77D1600F3AB7D /* YYPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoManager.m; sourceTree = "<group>"; };
+		35ABE8EE1CF7E5B400F3AB7D /* YYPhotoSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYPhotoSheet.xib; sourceTree = "<group>"; };
+		35ABE8F01CF7E75F00F3AB7D /* YYPhotoSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoSheet.h; sourceTree = "<group>"; };
+		35ABE8F11CF7E75F00F3AB7D /* YYPhotoSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoSheet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,9 @@
 		35ABE8C11CF778FB00F3AB7D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				35ABE8EE1CF7E5B400F3AB7D /* YYPhotoSheet.xib */,
+				35ABE8F01CF7E75F00F3AB7D /* YYPhotoSheet.h */,
+				35ABE8F11CF7E75F00F3AB7D /* YYPhotoSheet.m */,
 				35ABE8EB1CF77D1600F3AB7D /* YYPhotoManager.h */,
 				35ABE8EC1CF77D1600F3AB7D /* YYPhotoManager.m */,
 				35ABE8C21CF778FB00F3AB7D /* QBImagePicker */,
@@ -333,6 +341,7 @@
 			files = (
 				35ABE89B1CF7781C00F3AB7D /* LaunchScreen.storyboard in Resources */,
 				35ABE8DF1CF778FB00F3AB7D /* QBImagePicker.strings in Resources */,
+				35ABE8EF1CF7E5B400F3AB7D /* YYPhotoSheet.xib in Resources */,
 				35ABE8E51CF778FB00F3AB7D /* QBImagePicker.storyboard in Resources */,
 				35ABE8981CF7781C00F3AB7D /* Assets.xcassets in Resources */,
 				35ABE8961CF7781C00F3AB7D /* Main.storyboard in Resources */,
@@ -364,6 +373,7 @@
 				35ABE8E21CF778FB00F3AB7D /* QBAssetCell.m in Sources */,
 				35ABE8931CF7781C00F3AB7D /* ViewController.m in Sources */,
 				35ABE8ED1CF77D1600F3AB7D /* YYPhotoManager.m in Sources */,
+				35ABE8F21CF7E75F00F3AB7D /* YYPhotoSheet.m in Sources */,
 				35ABE8E11CF778FB00F3AB7D /* QBAlbumsViewController.m in Sources */,
 				35ABE8E01CF778FB00F3AB7D /* QBAlbumCell.m in Sources */,
 				35ABE8901CF7781C00F3AB7D /* AppDelegate.m in Sources */,
@@ -610,6 +620,7 @@
 				35ABE8B71CF7781C00F3AB7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35ABE8B81CF7781C00F3AB7D /* Build configuration list for PBXNativeTarget "YYPhotoManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -618,6 +629,7 @@
 				35ABE8BA1CF7781C00F3AB7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35ABE8BB1CF7781C00F3AB7D /* Build configuration list for PBXNativeTarget "YYPhotoManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -626,6 +638,7 @@
 				35ABE8BD1CF7781C00F3AB7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

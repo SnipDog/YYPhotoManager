@@ -7,6 +7,7 @@
 //
 
 #import "YYPhotoManager.h"
+
 @implementation YYPhotoManager
 
 static id instance;
@@ -22,23 +23,40 @@ static id instance;
 }
 
 - (void)show{
-    //TODO: 替换UIAlertController
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *ablum = [UIAlertAction actionWithTitle:@"打开相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [instance openAblum];
-    }];
-    
-    UIAlertAction *camera = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [instance openCamera];
-    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
-    [alert addAction:ablum];
-    [alert addAction:camera];
-    [alert addAction:cancel];
-    [self.target presentViewController:alert animated:YES completion:nil];
+    if (self.isCustom) {
+        self.cover = [[UIButton alloc]initWithFrame:self.target.view.frame];
+        self.cover.backgroundColor = [UIColor blackColor];
+        self.cover.alpha = 0.3;
+        [[UIApplication sharedApplication].keyWindow addSubview:self.cover];
+        [self.cover addTarget:self action:@selector(clickedCover) forControlEvents:UIControlEventTouchUpInside];
+        YYPhotoSheet *sheet = [[NSBundle mainBundle]loadNibNamed:@"YYPhotoSheet" owner:nil options:nil].lastObject;
+        [sheet.openAlbumBtn addTarget:self action:@selector(openAlbum) forControlEvents:UIControlEventTouchUpInside];
+        [sheet.takePhotoBtn addTarget:self action:@selector(openCamera) forControlEvents:UIControlEventTouchUpInside];
+        [sheet.cancelBtn addTarget:self action:@selector(clickedCover) forControlEvents:UIControlEventTouchUpInside];
+        sheet.frame = CGRectMake(0, kMainScreenBounds.height, kMainScreenBounds.width, kSheetHeight);
+        [[UIApplication sharedApplication].keyWindow addSubview:sheet];
+        [UIView animateWithDuration:0.3 animations:^{
+            sheet.frame = CGRectMake(0, kMainScreenBounds.height - kSheetHeight, kMainScreenBounds.width, kSheetHeight);
+            self.sheet = sheet;
+        }];
+    }else{
+
+        UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:instance cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相册",@"打开相机", nil];
+        [sheet showInView:self.target.view];
+    }
 }
 
-- (void)openAblum{
+- (void)clickedCover{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.cover.alpha = 0.0;
+        self.sheet.frame = CGRectMake(0, kMainScreenBounds.height, kMainScreenBounds.width, kSheetHeight);
+    } completion:^(BOOL finished) {
+        [self.sheet removeFromSuperview];
+    }];
+}
+
+- (void)openAlbum{
+    [self clickedCover];
     QBImagePickerController *picker = [[QBImagePickerController alloc]init];
     picker.delegate = instance;
     picker.filterType = QBImagePickerControllerFilterTypePhotos;
@@ -49,6 +67,7 @@ static id instance;
 }
 
 - (void)openCamera{
+        [self clickedCover];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIImagePickerController *imagePk = [[UIImagePickerController alloc] init];
         imagePk.allowsEditing = YES;
@@ -57,6 +76,15 @@ static id instance;
         imagePk.cameraCaptureMode =  UIImagePickerControllerCameraCaptureModePhoto;
         imagePk.delegate = instance;
         [self.target presentViewController:imagePk animated:YES completion:nil];
+    }
+}
+
+#pragma mark - 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        [self openAlbum];
+    }else if (buttonIndex == 1){
+        [self openCamera];
     }
 }
 

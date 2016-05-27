@@ -31,6 +31,12 @@
     [self.manager show];
 }
 
+- (IBAction)showCustomSheet:(id)sender {
+    self.manager.isCustom = YES;
+    [self.manager show];
+}
+
+
 - (void)didFinishEditPhoto:(UIImage *)image{
     self.imageView.image = image;
 }

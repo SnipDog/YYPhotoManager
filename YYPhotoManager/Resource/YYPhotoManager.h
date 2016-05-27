@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "QBImagePickerController.h"
 #import "VPImageCropperViewController.h"
-
+#import "YYPhotoSheet.h"
 @protocol YYPhotoManagerDelegate <NSObject>
 /**
  *  照片选择完成
@@ -28,7 +28,7 @@
 @end
 
 
-@interface YYPhotoManager : NSObject <QBImagePickerControllerDelegate,UIImagePickerControllerDelegate,VPImageCropperDelegate>
+@interface YYPhotoManager : NSObject <UIImagePickerControllerDelegate,UIActionSheetDelegate,QBImagePickerControllerDelegate,VPImageCropperDelegate>
 
 + (instancetype)defaultManager;
 
@@ -46,6 +46,22 @@
  *  源控制器
  */
 @property (strong,nonatomic) UIViewController *target;
+
+/**
+ *  蒙版
+ */
+@property (strong,nonatomic) UIButton *cover;
+
+/**
+ *  自定义sheet
+ */
+@property (strong,nonatomic) YYPhotoSheet *sheet;
+
+/**
+ *  是否使用自定义sheet
+ */
+@property (nonatomic,assign) BOOL isCustom;
+
 
 @property (nonatomic,weak) id <YYPhotoManagerDelegate> delegate;
 
