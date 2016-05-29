@@ -52,6 +52,7 @@ static id instance;
         self.sheet.frame = CGRectMake(0, kMainScreenBounds.height, kMainScreenBounds.width, kSheetHeight);
     } completion:^(BOOL finished) {
         [self.sheet removeFromSuperview];
+        [self.cover removeFromSuperview];
     }];
 }
 
