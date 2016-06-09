@@ -41,7 +41,7 @@ static id instance;
         }];
     }else{
 
-        UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:instance cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相册",@"打开相机", nil];
+        UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:nil delegate:instance cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开相机",@"打开相册", nil];
         [sheet showInView:self.target.view];
     }
 }
@@ -83,9 +83,9 @@ static id instance;
 #pragma mark - 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
-        [self openAlbum];
-    }else if (buttonIndex == 1){
         [self openCamera];
+    }else if (buttonIndex == 1){
+        [self openAlbum];
     }
 }
 
