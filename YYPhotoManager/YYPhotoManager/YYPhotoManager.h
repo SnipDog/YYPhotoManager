@@ -12,6 +12,7 @@
 #import "VPImageCropperViewController.h"
 #import "YYPhotoSheet.h"
 @protocol YYPhotoManagerDelegate <NSObject>
+@optional
 /**
  *  照片选择完成
  */
