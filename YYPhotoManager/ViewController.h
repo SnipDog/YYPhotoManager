@@ -2,8 +2,8 @@
 //  ViewController.h
 //  YYPhotoManager
 //
-//  Created by Heisenbean on 16/5/27.
-//  Copyright © 2016年 Heisenbean. All rights reserved.
+//  Created by Heisenbean on 17/2/27.
+//  Copyright © 2017年 Heisenbean. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
