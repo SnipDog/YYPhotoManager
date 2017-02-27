@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:YYPhotoManager.xcodeproj">
+      location = "self:YYPhotoManagerDemo.xcodeproj">
    </FileRef>
 </Workspace>
