@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.homepage     = "https://github.com/Heisenbean/YYPhotoManager/tree/master/YYPhotoManager/YYPhotoManager"
+  s.homepage     = "https://github.com/Heisenbean/YYPhotoManager"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
