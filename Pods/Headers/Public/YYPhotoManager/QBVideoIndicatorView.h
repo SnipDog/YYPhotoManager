@@ -1,0 +1,1 @@
+../../../../YYPhotoManager/QBImagePicker/QBVideoIndicatorView.h

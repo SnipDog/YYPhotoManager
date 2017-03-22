@@ -1,0 +1,16 @@
+PODS:
+  - YYPhotoManager (1.1)
+
+DEPENDENCIES:
+  - YYPhotoManager (from `../YYPhotoManager`)
+
+EXTERNAL SOURCES:
+  YYPhotoManager:
+    :path: ../YYPhotoManager
+
+SPEC CHECKSUMS:
+  YYPhotoManager: 703df2ab3bca77377772147ab7c7e26ab2019508
+
+PODFILE CHECKSUM: 1cd3942878cdd76c17745087649ca514266b1f86
+
+COCOAPODS: 1.1.1
