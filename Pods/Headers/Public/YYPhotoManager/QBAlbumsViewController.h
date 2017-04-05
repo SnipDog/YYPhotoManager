@@ -1,0 +1,1 @@
+../../../../YYPhotoManager/QBImagePicker/QBAlbumsViewController.h

@@ -1,0 +1,27 @@
+{
+  "name": "YYPhotoManager",
+  "version": "1.1",
+  "summary": "Simple manager to take photo or select photo from album.",
+  "homepage": "https://github.com/Heisenbean/YYPhotoManager",
+  "license": "MIT",
+  "authors": {
+    "Heisenbean": "heisenbean.me@gmail.com"
+  },
+  "source": {
+    "git": "git@github.com:Heisenbean/YYPhotoManager.git",
+    "tag": "1.1"
+  },
+  "social_media_url": "https://twitter.com/hedongbin",
+  "source_files": [
+    "YYPhotoManager/*",
+    "YYPhotoManager/VPImageCropper/*",
+    "YYPhotoManager/QBImagePicker/*"
+  ],
+  "resource_bundles": {
+    "YYPhotoManager": "YYPhotoManager/**/*.{lproj,storyboard,xib,nib}"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true
+}
